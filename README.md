@@ -27,7 +27,7 @@ Then add the loader to your `webpack` config. For example:
     }
 }
 ```
-Now run `webpack` again, The Webpack will generate a png file inside the `dist/` folder. By default the filename is the MD5 hash code of the content. 
+Now run `webpack` again, The Webpack will generate a png file inside the `dist/assets/` folder. By default the filename is the MD5 hash code of the content. 
 
 ### CSS/SASS Loaders
 
