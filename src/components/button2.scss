@@ -1,0 +1,16 @@
+$font-size: 20px;
+$bk-color: yellow;
+$font-color: red;
+$text-color: red;
+
+.wp-btn-2{
+    font-size: $font-size;
+    padding: 7px 15px;
+    background: $bk-color;
+    color: $text-color;
+    outline:none;
+}
+.wp-p-2{
+    color:$text-color;
+    font-weight: bold;
+}

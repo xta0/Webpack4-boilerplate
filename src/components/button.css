@@ -1,0 +1,11 @@
+.wp-btn{
+    font-size: 20px;
+    padding: 7px 15px;
+    background: green;
+    color: white;
+    outline:none;
+}
+.wp-p{
+    color:green;
+    font-weight: bold;
+}
