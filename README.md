@@ -17,12 +17,15 @@ $ npm install file-loader --save-dev
 Then add the loader to your `webpack` config. For example:
 
 ```javascript
-rules: [
-    {
+{
     test: /\.(png|jpg)$/,
-    use: ["file-loader"]
+    use: {
+        loader: 'file-loader',
+        options: {
+            outputPath: 'assets/'
+        }
     }
-]
+}
 ```
 Now run `webpack` again, The Webpack will generate a png file inside the `dist/` folder. By default the filename is the MD5 hash code of the content. 
 
