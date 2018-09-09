@@ -1,8 +1,12 @@
-import addImage from "./image";
+import Heading from './components/heading/heading.js';
+const hd = new Heading();
+hd.render();
+
+import addImage from './image';
 addImage();
 
-import WPButton from "./components/button";
-import WPButton2 from "./components/button2";
+import WPButton from './components/button';
+import WPButton2 from './components/button2';
 
 const button = new WPButton();
 button.render();

@@ -1,36 +1,60 @@
-const path = require("path");
+const path = require('path');
+const UgliyJSPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "dist/"
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.[contenthash].js',
+    publicPath: ''
   },
+  mode: 'production',
   module: {
     rules: [
       {
-        test: /\.(png|jpg)$/,
-        use: ["file-loader"]
+        test: /\.(png|jpe?g)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputpath: 'assets/'
+          }
+        }
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            plugins: ["transform-class-properties"]
+            plugins: ['transform-class-properties']
           }
         }
+      },
+      {
+        test: /\.hbs$/,
+        use: ['handlebars-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new UgliyJSPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style.[contenthash].css'
+    }),
+    new CleanWebpackPlugin('dist'),
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    })
+  ]
 };
