@@ -1,0 +1,26 @@
+{
+  "name": "webpack4",
+  "version": "1.0.0",
+  "description": "This project was designed to demonstrate the basic usage of Webpack4. Topics includes:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xta0/Webpack4-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xta0/Webpack4-boilerplate/issues"
+  },
+  "homepage": "https://github.com/xta0/Webpack4-boilerplate#readme",
+  "devDependencies": {
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  }
+}
