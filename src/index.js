@@ -13,3 +13,5 @@ button.render();
 
 const button2 = new WPButton2();
 button2.render();
+
+console.log(123);
