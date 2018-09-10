@@ -2,16 +2,16 @@
 
 This project was designed to demonstrate the basic usage of Webpack4. Topics includes:
 
-- Production environment setup
-  - branch mode
 - Loaders
-  - branch loader
+  - see branch `loader`
 - Plugins
-   - branch plugin
+   - see branch `plugin`
+- Production environment setup
+  - see branch `mode`
 - Multipage application config
-  - branch multi-page
+  - see branch `multi-page`
 - Single page application config
-  - branch single-page
+  - see branch `single-page`
 
 ## License
 
