@@ -1,7 +1,3 @@
-## Webpack4-boilerplate
-
-This project was designed to demonstrate the basic usage of Webpack4. Topics includes:
-
 ### File Loaders
 
 Let's say you have a javascript file in which want to import an image from `/assets/images` folder, like this:
