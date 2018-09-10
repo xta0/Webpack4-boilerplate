@@ -5,23 +5,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: {
-    index1: './src/index1.js',
-    index2: './src/index2.js'
-  },
+  entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].bundle.[contenthash].js',
-    publicPath: ''
+    filename: 'bundle.[contenthash].js',
+    publicPath: '/static/'
   },
   mode: 'production',
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      minSize: 10000,
-      automaticNameDelimiter: '_'
-    }
-  },
   module: {
     rules: [
       {
@@ -60,18 +50,11 @@ module.exports = {
   plugins: [
     new UgliyJSPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].style.[contenthash].css'
+      filename: 'style.[contenthash].css'
     }),
     new CleanWebpackPlugin('dist'),
     new HtmlWebpackPlugin({
-      filename: 'index-1.html',
-      template: './index.html',
-      chunks: ['index1']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'index-2.html',
-      template: './index.html',
-      chunks: ['index2']
+      template: './index.html'
     })
   ]
 };

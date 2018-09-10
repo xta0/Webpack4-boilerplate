@@ -3,13 +3,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: {
-    index1: './src/index1.js',
-    index2: './src/index2.js'
-  },
+  entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
     publicPath: ''
   },
   mode: 'development',
@@ -56,13 +53,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin('dist'),
     new HtmlWebpackPlugin({
-      filename: 'index1.html',
-      chunks: ['index1'],
-      template: './index.html'
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'index2.html',
-      chunks: ['index2'],
       template: './index.html'
     })
   ]
