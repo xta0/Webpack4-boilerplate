@@ -5,6 +5,8 @@ This project was designed to demonstrate the basic usage of Webpack4. Topics inc
 - Basic Configuration
 - Loaders
 - Plugins
+- Multipage application config
+- Single page application config
 
 ## License
 
